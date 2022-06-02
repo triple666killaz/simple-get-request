@@ -1,7 +1,8 @@
 package com.company;
 
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.json.simple.JSONArray;
@@ -28,14 +29,15 @@ public class Main {
         long baseCurrency = (long)jsonObject.get("baseCurrency");
         String baseCurrencyLit = (String) jsonObject.get("baseCurrencyLit");
 
-        Map exchangeRate = ((Map)jsonObject.get("exchangeRate"));
+        JSONArray jsonArray = (JSONArray) jsonObject.get("exchangeRate");
 
-        Iterator<Map.Entry> itr1 = exchangeRate.entrySet().iterator();
+        System.out.println("Date : " + date);
+        System.out.println("Bank : " + bank);
+        System.out.println("Base currency : " + baseCurrency);
+        System.out.println("Base currency lit : " + baseCurrencyLit);
 
-        while(itr1.hasNext()) {
-            Map.Entry pair = itr1.next();
-            System.out.println(pair.getKey() + " : " + pair.getValue());
-        }
+        System.out.println("Exchange rate : " + jsonArray);
+
 
 
 
